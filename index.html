@@ -100,6 +100,10 @@
 			<li class="next">делаем сборку Gatling, наследуемся от неё в проектах</li>
 			<li class="next">пишем прослойку с конфигами</li>
 		</ul>
+		<pre class="next"><code>
+<mark>Cloud</mark> :&nbsp;&nbsp;<mark>Apps</mark>
+<mark class="blue">CI</mark> :&nbsp;&nbsp;<mark class="blue">Runners</mark>&nbsp;&nbsp;<mark class="blue">Tests</mark>
+		</code></pre>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Мониторим</h2>
@@ -108,6 +112,11 @@
 			<li class="next">ставим на машинки Telegraf</li>
 			<li class="next">поднимаем Grafana с дашбордами</li>
 		</ul>
+		<pre class="next"><code>
+<mark>Cloud</mark> :&nbsp;&nbsp;<mark>Apps</mark>
+<mark>CI</mark> :&nbsp;&nbsp;<mark>Runners</mark>&nbsp;&nbsp;<mark>Tests</mark>
+<mark class="blue">Metrics</mark> :&nbsp;&nbsp;<mark class="blue">Exporters</mark>&nbsp;&nbsp;<mark class="blue">Dashboards</mark>
+		</code></pre>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Хотим фичи</h2>
@@ -116,6 +125,11 @@
 			<li class="next">прикручиваем логи медленных запросов</li>
 			<li class="next">прикручиваем графики SLA</li>
 		</ul>
+		<pre class="next"><code>
+<mark>Cloud</mark> :&nbsp;&nbsp;<mark>Apps</mark>
+<mark>CI</mark> :&nbsp;&nbsp;<mark class="blue">Analitycs</mark>&nbsp;&nbsp;<mark>Runners</mark>&nbsp;&nbsp;<mark>Tests</mark>
+<mark>Metrics</mark> :&nbsp;&nbsp;<mark>Exporters</mark>&nbsp;&nbsp;<mark>Dashboards</mark>
+		</code></pre>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Подключаем ещё проекты</h2>
@@ -155,6 +169,14 @@
 			<li class="next">на поддержке множество технологий</li>
 		</ul>
 	</div></section>
+	<section class="slide"><div>
+		<h2>Узкие места</h2>
+		<pre><code>
+<mark>Cloud</mark> :&nbsp;&nbsp;<mark>Apps</mark>
+<mark class="red">CI</mark> :&nbsp;&nbsp;<mark class="red">Analitycs</mark>&nbsp;&nbsp;<mark>Runners</mark>&nbsp;&nbsp;<mark class="red">Tests</mark>
+<mark class="red">Metrics</mark> :&nbsp;&nbsp;<mark class="red">Exporters</mark>&nbsp;&nbsp;<mark class="red">Dashboards</mark>
+		</code></pre>
+	</div></section>
 	<section class="clear green slide"><div>
 		<h2 class="small shout">Ещё людей?<br><br><span class="next">Всё переделываем?</span></h2>
 	</div></section>
@@ -179,11 +201,15 @@
 	<section class="slide"><div>
 		<h2>Кодим</h2>
 		<ul>
-			<li>переносим в отдельные репозитории</li>
-			<li class="next">убираем core</li>
+			<li>переносим в отдельные репозитории и убираем core</li>
 			<li class="next">делаем тесты самодостаточными</li>
 			<li class="next">отдаём в команды</li>
 		</ul>
+		<pre class="next"><code>
+<mark>Cloud</mark> :&nbsp;&nbsp;<mark>Apps</mark>
+<mark class="red">CI</mark> :&nbsp;&nbsp;<mark class="red">Analitycs</mark>&nbsp;&nbsp;<mark>Runners</mark>&nbsp;&nbsp;<mark class="blue">Tests</mark>
+<mark class="red">Metrics</mark> :&nbsp;&nbsp;<mark class="red">Exporters</mark>&nbsp;&nbsp;<mark class="red">Dashboards</mark>
+		</code></pre>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Нюансы и факты</h2>
@@ -199,6 +225,11 @@
 			<li class="next">поднимаем Shared runners с docker-executor</li>
 			<li class="next">создаём docker-образ со всеми инструментами</li>
 		</ul>
+		<pre class="next"><code>
+<mark>Cloud</mark> :&nbsp;&nbsp;<mark>Apps</mark>
+<mark class="blue">VCS, CI</mark> :&nbsp;&nbsp;<mark class="red">Analitycs</mark>&nbsp;&nbsp;<mark class="blue">Runners</mark>&nbsp;&nbsp;<mark class="blue">Tools</mark>&nbsp;&nbsp;<mark>Tests</mark>
+<mark class="red">Metrics</mark> :&nbsp;&nbsp;<mark class="red">Exporters</mark>&nbsp;&nbsp;<mark class="red">Dashboards</mark>
+		</code></pre>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Нюансы</h2>
@@ -229,6 +260,11 @@
 			<li>переезжаем на общие Prometheus и Grafana</li>
 			<li class="next">используем Ansible роли экспортёров</li>
 		</ul>
+		<pre class="next"><code>
+<mark>Cloud</mark> :&nbsp;&nbsp;<mark>Apps</mark>
+<mark>VCS, CI</mark> :&nbsp;&nbsp;<mark class="red">Analitycs</mark>&nbsp;&nbsp;<mark>Runners</mark>&nbsp;&nbsp;<mark>Tools</mark>&nbsp;&nbsp;<mark>Tests</mark>
+<mark class="blue">Metrics</mark> :&nbsp;&nbsp;<mark class="blue">Exporters</mark>&nbsp;&nbsp;<mark class="blue">Dashboards</mark>
+		</code></pre>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Нюансы</h2>
@@ -240,10 +276,15 @@
 	<section class="slide"><div>
 		<h2>Смотрим в аналитику</h2>
 		<ul>
-			<li>выделяем фиче-скрипты с Jenkins в сервис с UI, API и CLI</li>
-			<li class="next">открываем API и стандартизируем формат отчётов</li>
+			<li>выделяем фиче-скрипты в сервис с UI, открытым API и CLI</li>
 			<li class="next">дружим с Gatling и Яндекс.Танк</li>
 		</ul>
+		<pre class="next"><code>
+<mark>Cloud</mark> :&nbsp;&nbsp;<mark>Apps</mark>
+<mark>VCS, CI</mark> :&nbsp;&nbsp;<mark>Runners</mark>&nbsp;&nbsp;<mark>Tools</mark>&nbsp;&nbsp;<mark>Tests</mark>
+<mark>Metrics</mark> :&nbsp;&nbsp;<mark>Exporters</mark>&nbsp;&nbsp;<mark>Dashboards</mark>
+<mark class="blue">Analitycs</mark>
+		</code></pre>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Факты</h2>

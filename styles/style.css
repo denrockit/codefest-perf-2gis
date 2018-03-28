@@ -24,6 +24,12 @@
 .slide h2.shout.small {
 	font-size: 72px;
 }
+.slide a {
+	color: #009de1;
+}
+.slide a:hover {
+	color: #00c7f7;
+}
 
 .slide.blue {
 	background-color: #009de1;
