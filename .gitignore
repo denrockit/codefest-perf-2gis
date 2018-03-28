@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+
+node_modules/*/package.json
+node_modules/*/README.md
+node_modules/shower-ribbon/index.html
+node_modules/shower-ribbon/styles/screen-4x3.css
+node_modules/shower-ribbon/fonts/pt-sans-bold.woff
+node_modules/shower-ribbon/fonts/pt-sans-bold-italic.woff
+node_modules/shower-ribbon/fonts/pt-sans-italic.woff
+node_modules/shower-ribbon/fonts/pt-sans-narrow-bold.woff
+node_modules/shower-ribbon/pictures

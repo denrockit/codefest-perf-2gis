@@ -1,0 +1,88 @@
+@font-face {
+	font-family: 'Suisse';
+	font-weight: normal;
+	src: url(../fonts/suisseintl-cond.ttf) format("truetype");
+}
+@font-face {
+	font-family: 'Suisse Bold';
+	font-weight: bold;
+	src: url(../fonts/suisseintl-cond-bold.ttf) format("truetype");
+}
+
+.slide h2 {
+	font-family: 'Suisse', sans-serif;
+	font-weight: normal;
+}
+.slide p, .slide li {
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	color: #414143;
+}
+.slide span.integer {
+	font-family: 'Suisse Bold', sans-serif;
+	font-weight: bold;
+}
+.slide h2.shout.small {
+	font-size: 72px;
+}
+
+.slide.blue {
+	background-color: #009de1;
+}
+.slide.green {
+	background-color: #a6ce38;
+}
+.slide.yellow {
+	background-color: #f9ec00;
+}
+.slide.blue h2, .slide.green h2 {
+	color: #fff;
+}
+
+.caption {
+	color: #fff;
+	text-shadow: 0 1px 1px #1f3f60;
+}
+.caption h1 {
+	font-family: 'Suisse', sans-serif;
+	font-weight: normal;
+}
+.caption a {
+	color: #009de1;
+	text-shadow: 0 1px 1px #1f3f60;
+}
+.caption a:hover {
+	color: #00c7f7;
+}
+
+mark.red {
+	background: #e77c4f;
+}
+mark.green {
+	background: #a6ce38;
+}
+mark.blue {
+	background: #009de1;
+}
+
+.shower.list {
+	background: #a6ce38 url(../images/background.png);
+}
+
+.slide:after {
+	border-radius: 50px;
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	padding: 0;
+	line-height:50px;
+	width: 50px;
+	height: 50px;
+	background: #a6ce38;
+	counter-increment: slide;
+	content: counter(slide);
+	text-align: center;
+}
+
+div.progress  {
+	border-bottom-color: #009de1;
+}

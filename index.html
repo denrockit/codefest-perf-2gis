@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Как мы непрерывно тестируем производительность 30 проектов</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+	<link rel="stylesheet" href="styles/style.css">
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-55877254-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>Как мы непрерывно тестируем<br>производительность 30 проектов</h1>
+		<p><a href="https://dentrifonov.github.io">Денис Трифонов</a>, <a href="https://2gis.ru">2ГИС</a></p>
+	</header>
+
+	<section class="clear slide" id="title"><div>
+		<h2>Как мы непрерывно тестируем<br>производительность 30 проектов</h2>
+		<p>Денис Трифонов</p>
+		<p>Специалист по тестированию<br>производительности, 2ГИС</p>
+		<img class="w h cover" src="images/cf-bg.png">
+		<style>
+			#title h2 {
+				position: relative;
+				top: 65px;
+				left: 220px;
+			}
+			#title p {
+				position: relative;
+				top: 150px;
+				left: 220px;
+				font-size: 32px;
+				line-height: 40px;
+			}
+			#title div div {
+				width: 250px;
+				height: 250px;
+				position: relative;
+				top: -120px;
+				left: 575px;
+				background: #A6CE38;
+				border-radius: 50%;
+				white-space: nowrap;
+				text-align: center;
+			}
+			#title div div span {
+				display: inline-block;
+				height: 100%;
+				vertical-align: middle;
+			}
+			#title div div img {
+				z-index: auto;
+				vertical-align: middle;
+				position: static;
+			}
+		</style>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Обо мне</h2>
+		<p>Занимаюсь тестированием производительности бекендов внешних продуктов 2ГИС.</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Первые шаги</h2>
+		<ul>
+			<li>нагружаем Справочное API Яндекс.Танком</li>
+			<li class="next">сравниваем старую и новую версии</li>
+			<li class="next">используем контур стейджинга</li>
+		</ul>
+	</div></section>
+	<section class="clear slide"><div>
+		<figure>
+			<img class="w cover" src="images/locomotive.jpg">
+			<figcaption>
+				© <a href="https://commons.wikimedia.org/wiki/User:George_Shuklin">George Shuklin</a>
+			</figcaption>
+		</figure>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Подключаем новые проекты</h2>
+		<ul>
+			<li>формируем команду</li>
+			<li class="next">нагружаем Фото и Авторизацию</li>
+			<li class="next">берём Gatling для сценариев</li>
+			<li class="next">переиспользуем код</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Автоматизируем</h2>
+		<ul>
+			<li>поднимаем Jenkins и слейв с инструментами</li>
+			<li class="next">делаем сборку Gatling, наследуемся от неё в проектах</li>
+			<li class="next">пишем прослойку с конфигами</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Мониторим</h2>
+		<ul>
+			<li>поднимаем InfluxDB</li>
+			<li class="next">ставим на машинки Telegraf</li>
+			<li class="next">поднимаем Grafana с дашбордами</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Хотим фичи</h2>
+		<ul>
+			<li>прикручиваем диффер</li>
+			<li class="next">прикручиваем логи медленных запросов</li>
+			<li class="next">прикручиваем графики SLA</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Подключаем ещё проекты</h2>
+		<ul>
+			<li>выделяем общие компоненты BaseRequest, BaseTest</li>
+			<li class="next">определяем пакет с core</li>
+		</ul>
+	</div></section>
+	<section class="clear yellow slide"><div>
+		<h2 class="small shout">И вот их перевалило за <span class="integer">20</span></h2>
+	</div></section>
+	<section class="clear slide"><div>
+		<figure>
+			<img class="w cover" src="images/elocomotive.jpg">
+			<figcaption class="white">
+				© <a href="http://www.trainmania.com.ua/models-buy/elektrovoz-re-460roco-art62697masshtab-no187">www.trainmania.com.ua</a>
+			</figcaption>
+		</figure>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Плюсы</h2>
+		<ul>
+			<li>быстрый старт нового проекта</li>
+			<li class="next">переиспользование кода и фич</li>
+			<li class="next">полуавтоматизация и однопоточность тестов</li>
+			<li class="next">интерфейс запуска и конфигурации тестов</li>
+			<li class="next">множество технологий на пощупать и выбрать</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Минусы</h2>
+		<ul>
+			<li>постоянное участие в правках общего репозитория</li>
+			<li class="next">при изменении core нужно следить за всеми проектами</li>
+			<li class="next">три слоя конфигурации</li>
+			<li class="next">ручной запуск, просьбы запустить</li>
+			<li class="next">на поддержке множество технологий</li>
+		</ul>
+	</div></section>
+	<section class="clear green slide"><div>
+		<h2 class="small shout">Ещё людей?<br><br><span class="next">Всё переделываем?</span></h2>
+	</div></section>
+	<section class="clear slide"><div>
+		<figure>
+			<img class="w cover" src="images/routes.jpg">
+			<figcaption class="white">
+				© <a href="http://www.pskovrail.ru/stanzii/toroschino_severnaya_gorlovina.html">www.pskovrail.ru</a>
+			</figcaption>
+		</figure>
+	</div></section>
+	<section class="slide"><div>
+		<h2>План перестройки</h2>
+		<ul>
+			<li>избавиться от общего репозитория и core</li>
+			<li class="next">разнести тесты по командам</li>
+			<li class="next">погрузить команду в тестирование</li>
+			<li class="next">забыть про интерфейсы и полностью автоматизировать</li>
+			<li class="next">посмотреть, можно ли что-то переиспользовать</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Кодим</h2>
+		<ul>
+			<li>переносим в отдельные репозитории</li>
+			<li class="next">убираем core</li>
+			<li class="next">делаем тесты самодостаточными</li>
+			<li class="next">отдаём в команды</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Нюансы и факты</h2>
+		<ul>
+			<li>15% повторяемого кода</li>
+			<li class="next">Scala не так страшна</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Автоматизируем</h2>
+		<ul>
+			<li>переносим на общий GitLab и GitLab CI</li>
+			<li class="next">поднимаем Shared runners с docker-executor</li>
+			<li class="next">создаём docker-образ со всеми инструментами</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Нюансы</h2>
+		<ul>
+			<li>оверхед с Docker не замечен</li>
+			<li class="next">тюнить нужно хост и docker-рантайм</li>
+			<li class="next">могут быть сложности с пакетами в &laquo;одной коробке&raquo;</li>
+			<li class="next">UI нет, поэтому меняем конфигурацию в ветках</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Погружаем в тестирование</h2>
+		<ul>
+			<li>проводим мастер-классы</li>
+			<li class="next">готовим документацию и примеры</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Факты</h2>
+		<ul>
+			<li>компетентность людей в нагрузке стала выше</li>
+			<li class="next">стали тестировать не только перед релизом</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Мониторим</h2>
+		<ul>
+			<li>переезжаем на общие Prometheus и Grafana</li>
+			<li class="next">используем Ansible роли экспортёров</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Нюансы</h2>
+		<ul>
+			<li>договариваемся с админами об увеличении частоты сбора метрик</li>
+			<li class="next">поднимаем Push Gateway для Graphite-метрик Gatling</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Смотрим в аналитику</h2>
+		<ul>
+			<li>выделяем фиче-скрипты с Jenkins в сервис с UI, API и CLI</li>
+			<li class="next">открываем API и стандартизируем формат отчётов</li>
+			<li class="next">дружим с Gatling и Яндекс.Танк</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Факты</h2>
+		<ul>
+			<li>к сервису подключились тесты мобилок и фронтенда</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Учимся в Kubernetes</h2>
+		<ul>
+			<li>поднимаем рабочую ноду в нагрузочном контуре</li>
+			<li class="next">добавляем kubectl в образ с инструментами</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Стучимся в процессы</h2>
+		<ul>
+			<li>обсуждаем производительность на техническом ревью проектов</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Что получилось</h2>
+		<ul>
+			<li>на поддержке минимум технологий</li>
+			<li class="next">используем общие компоненты</li>
+			<li class="next">команды вовлечены в процесс тестирования</li>
+			<li class="next">тотальная автоматизация</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Инфраструктура</h2>
+		<pre><code>
+<mark class="red">Cloud</mark> :&nbsp;&nbsp;<mark class="blue next">Apps</mark><span class="next">
+<mark class="red">VCS, CI</mark> :&nbsp;&nbsp;<mark class="green next">Runners</mark>&nbsp;&nbsp;<mark class="green next">Tools</mark>&nbsp;&nbsp;<mark class="blue next">Tests</mark></span><span class="next">
+<mark class="red">Metrics</mark> :&nbsp;&nbsp;<mark class="green next">Exporters</mark>&nbsp;&nbsp;<mark class="red next">Dashboards</mark></span><span class="next">
+<mark class="green">Analytics</mark></span>
+
+Legend: <mark class="red">Admins</mark>&nbsp;&nbsp;<mark class="green">Perf</mark>&nbsp;&nbsp;<mark class="blue">Teams</mark>
+		</code></pre>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Хотим стрелять во внешний сервис?</h2>
+		<pre><code>
+<mark class="blue">Cloud</mark> :&nbsp;&nbsp;<mark class="blue">Apps</mark>
+<mark>VCS, CI</mark> :&nbsp;&nbsp;<mark>Runners</mark>&nbsp;&nbsp;<mark>Tools</mark>&nbsp;&nbsp;<mark class="blue">Tests</mark>
+<mark>Metrics</mark> :&nbsp;&nbsp;<mark>Exporters</mark>&nbsp;&nbsp;<mark>Dashboards</mark>
+<mark>Analytics</mark>
+
+Legend: <mark>Common</mark>&nbsp;&nbsp;<mark class="blue">Teams</mark>
+		</code></pre>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Хотим свои нагрузочные мощности?</h2>
+		<pre><code>
+<mark class="blue">Cloud</mark> :&nbsp;&nbsp;<mark class="blue">Apps</mark>
+<mark>VCS, CI</mark> :&nbsp;&nbsp;<mark class="blue">Runners</mark>&nbsp;&nbsp;<mark>Tools</mark>&nbsp;&nbsp;<mark class="blue">Tests</mark>
+<mark>Metrics</mark> :&nbsp;&nbsp;<mark>Exporters</mark>&nbsp;&nbsp;<mark>Dashboards</mark>
+<mark>Analytics</mark>
+
+Legend: <mark>Common</mark>&nbsp;&nbsp;<mark class="blue">Teams</mark>
+		</code></pre>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Хотим добавить аналитику?</h2>
+		<pre><code>
+<mark class="blue">Cloud</mark> :&nbsp;&nbsp;<mark class="blue">Apps</mark>
+<mark>VCS, CI</mark> :&nbsp;&nbsp;<mark class="blue">Runners</mark>&nbsp;&nbsp;<mark class="blue">Tools</mark>&nbsp;&nbsp;<mark class="blue">Tests</mark>
+<mark>Metrics</mark> :&nbsp;&nbsp;<mark>Exporters</mark>&nbsp;&nbsp;<mark>Dashboards</mark>
+<mark>Analytics</mark>
+
+Legend: <mark>Common</mark>&nbsp;&nbsp;<mark class="blue">Teams</mark>
+		</code></pre>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Новый проект: тест</h2>
+		<pre><code>
+phantom:
+	address: example.org<span class="next">
+	load_profile:
+		load_type: rps
+		schedule: line(1, 100, 30s) const(100, 120s)</span><span class="next">
+	uris:
+		- "/"</span>
+		</code></pre>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Новый проект: CI</h2>
+		<pre><code>
+test:
+	image: docker-hub/perf/tools<span class="next">
+	script:
+		- yandex-tank -c load.yaml</span><span class="next">
+	after_script:
+		- cli upload</span><span class="next">
+	tags: [ perf ]</span>
+		</code></pre>
+	</div></section>
+	<section class="clear yellow slide"><div>
+		<h2 class="shout"><span class="integer">14</span> LOC</h2>
+	</div></section>
+	<section class="clear green slide"><div>
+		<h2 class="shout"><span class="integer">2</span> года</h2>
+	</div></section>
+	<section class="clear blue slide"><div>
+		<h2 class="shout"><span class="integer">1</span> человек</h2>
+	</div></section>
+	<section class="clear slide"><div>
+		<figure>
+			<img class="w cover" src="images/hyperloop.jpg">
+			<figcaption class="white">
+				© <a href="https://blog.allo.ua/hyperloop-transport-budushhego/">blog.allo.ua</a>
+			</figcaption>
+		</figure>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Простые советы</h2>
+		<ul>
+			<li>на малом числе активных проектов можно выделить core</li>
+			<li class="next">легаси пусть остаётся легаси</li>
+			<li class="next">автоматизируйте всё и вся</li>
+			<li class="next">переиспользуйте и делайте проще</li>
+			<li class="next">шарьте знания, найдите круг заинтересованных</li>
+		</ul>
+	</div></section>
+	<section class="clear slide" id="contacts"><div>
+		<h2>Денис Трифонов</h2>
+		<p><a href="https://dentrifonov.github.io">dentrifonov.github.io</a></p>
+		<div><span></span><h2>Спасибо!</h2></div>
+		<img class="cover" src="images/2gis-cover.png">
+		<style>
+			#contacts h2 {
+				position: relative;
+				top: 200px;
+				left: 62px;
+			}
+			#contacts p {
+				position: relative;
+				top: 200px;
+				left: 62px;
+				font-size: 32px;
+			}
+			#contacts div div {
+				width: 250px;
+				height: 250px;
+				position: relative;
+				top: -120px;
+				left: 550px;
+				background: #009de1;
+				border-radius: 50%;
+				white-space: nowrap;
+				text-align: center;
+				vertical-align: middle;
+			}
+			#contacts div div span {
+				display: inline-block;
+				height: 100%;
+				vertical-align: middle;
+			}
+			#contacts div div h2 {
+				z-index: auto;
+				vertical-align: middle;
+				position: static;
+				display: inline-block;
+				margin-bottom: 0;
+				color: #fff;
+			}
+		</style>
+	</div></section>
+
+	<div class="progress"></div>
+
+	<script src="node_modules/shower-core/shower.min.js"></script>
+
+	<script type="text/javascript">
+		(function (d, w, c) {
+			(w[c] = w[c] || []).push(function() {
+				try {
+					w.yaCounter26725989 = new Ya.Metrika({
+						id:26725989
+					});
+				} catch(e) { }
+			});
+			var n = d.getElementsByTagName("script")[0],
+					s = d.createElement("script"),
+					f = function () { n.parentNode.insertBefore(s, n); };
+			s.type = "text/javascript";
+			s.async = true;
+			s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+			if (w.opera == "[object Opera]") {
+				d.addEventListener("DOMContentLoaded", f, false);
+			} else { f(); }
+		})(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript><div><img src="//mc.yandex.ru/watch/26725989" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+</body>
+</html>
